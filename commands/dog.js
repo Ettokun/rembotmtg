@@ -4,7 +4,7 @@ const randomPuppy = require("random-puppy")
 
 exports.run = async (client, message, args) => {
   let broke = new Discord.RichEmbed().setTitle("Dog 🐶").setDescription("Timeout, try again !")
-  /*let image = new Discord.RichEmbed().setTitle("Dog 🐶")
+  let image = new Discord.RichEmbed().setTitle("Dog 🐶")
   
   let {body} = await superagent.get("https://dog.ceo/api/breeds/image/random")
   
@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   image.setImage(body.file)
   image.setFooter(client.user.username, client.user.displayAvatarURL)
   image.setTimestamp()
-  image.setColor("BLUE")*/
+  image.setColor("BLUE")
 
 randomPuppy("dog").then(url => {
   snekfetch.get(url).then(async res => {
