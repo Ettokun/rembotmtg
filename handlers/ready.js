@@ -8,8 +8,8 @@ module.exports = {
        console.log(`[${client.guilds.size} Guilds] (${client.users.size} Users) {${client.channels.size} channels} Yes my body was ready.`)
         client.login(process.env.TOKEN)
       client.on('ready', () => {
-            //bot.user.setGame(`Emergency update V4 (${bot.guilds.size} guilds) | r!help` , "https://www.twitch.tv/MTGPRODUCTION")
-            //bot.user.setStatus('idle');
+            bot.user.setGame(`Emergency update V4 (${bot.guilds.size} guilds) | r!help` , "https://www.twitch.tv/MTGPRODUCTION")
+            bot.user.setStatus('idle');
            
             client.user.setPresence({ activity: { name: `${client.guilds.size} guilds | r!help`, type: "WATCHING", }, status: 'idle'})
       })
