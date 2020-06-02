@@ -1,6 +1,6 @@
 const oldytdl = require('ytdl-core');
 const ytdl = require('ytdl-core-discord') 
-//const ytpl = require('youtube-playlist') 
+const ytpl = require('youtube-playlist') 
 const Discord = require('discord.js');
 const infos = require('../databases/infos.json');
 const ready = require('../handlers/ready.js') 
@@ -76,7 +76,7 @@ async function play(client, ops, data) {
 		  url: data.queue[0].thumbnail,
 	  }
 }});   
-  //data.dispatcher = await dat.pllyOpusStream(await ytdl('https://youtube.com/GZpMdgVvI6w'))
+  data.dispatcher = await dat.pllyOpusStream(await ytdl('https://youtube.com/GZpMdgVvI6w'))
   data.dispatcher = await data.connection.play(await oldytdl(data.queue[0].url))
   console.log(data.dispatcher)
   data.dispatcher.guildID = data.guildID;
