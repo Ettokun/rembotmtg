@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
   
   client.box.ensure(key, { bronze: 0, silver: 0, gold: 0, diamond: 0, premium: 0, ultimate: 0 })
   
- /* function openbox(type) {
+  function openbox(type) {
     if(!type.equals("bronze") || type.equals("silver") || type.equals("gold") || type.equals("diamond") || type.equals("premium") || type.equals("ultimate")) {
       return null
     }
@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
     var slot3 = items[Math.floor(Math.random() * items.length)]
     var gold = Math.round(Math.random() * () - )
     
-  }*/
+  }
   
   if(args[0] === "open") {
     if(args[1] === "bronze") {
