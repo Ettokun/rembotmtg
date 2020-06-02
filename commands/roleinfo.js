@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   .setTitle("Roleinfo")
   .addField("Name", role.name)
   .addField("ID", role.id)
-  .addField("hex Color (b10 color)", `${role.hexColor} (${role.color})`)
+  .addField("hex Colour (b10 color)", `${role.hexColor} (${role.color})`)
   .addField("Createt At", role.createdAt)
   .addField("@role", `<@&${role.id}>`)
   .addField("Members", role.members.size)
