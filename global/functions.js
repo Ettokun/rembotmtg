@@ -8,10 +8,10 @@ module.exports = (bot, utils, ytdl, config) => {
 
         if (jsfiles.length <= 0) return console.log("There are no commands to load...");
 
-        //console.log(`Loading ${jsfiles.length} commands...`);
+        console.log(`Loading ${jsfiles.length} commands...`);
         jsfiles.forEach((f, i) => {
             let props = require(`../commands/${f}`);
-            //console.log(`${i + 1}: ${f} loaded!`);
+            console.log(`${i + 1}: ${f} loaded!`);
             bot.commands.set(props.help.name, props);
             props.help.aliases.forEach(alias => {
                 bot.aliases.set(alias, props.help.name);
