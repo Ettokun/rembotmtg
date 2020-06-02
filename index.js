@@ -9,7 +9,7 @@ const utils = require('./global/utils');
 const client = new Discord.Client();
 const DBL = require("dblapi.js")
 const randomPuppy = require("random-puppy")  
-//const dbl = new DBL(process.env.BAPITOKEN, client)
+const dbl = new DBL(process.env.BAPITOKEN, client)
 const fs = require('fs')
 const Enmap = require('enmap')
 const music = require('./global/functions')(client, utils, ytdl, config);
@@ -111,10 +111,10 @@ client.votes = new Map();
 ready.ready(client);
 message.message(client, utils, config, Discord)
 
-/*dbl.on('posted', () => {
+dbl.on('posted', () => {
      bot.channels.get('508326997059960848').send(':outbox_tray: [DBL] Server count posted') 
 }) 
 
 dbl.on('vote', vote => {
   bot.channels.get('508326997059960848').send(`:inbox_tray: [DBL] User with ID ${vote.user} just voted!`);
-});*/
+});
