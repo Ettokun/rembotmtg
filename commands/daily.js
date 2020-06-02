@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
   var xp = client.shareholders.getProp(key, "xp")
   var gems = client.shareholders.getProp(key, "gems")
   
-  //client.shareholders.ensure(key, { name: message.author.username, tag: message.author.discriminator, id: message.author.id, picture: message.author.defaultAvatarURL, moneyOut: 0, moneyIn: 0, xp: 0, gems: 0, daily_countdown: 0, hourly_countdown: 0})
+  client.shareholders.ensure(key, { name: message.author.username, tag: message.author.discriminator, id: message.author.id, picture: message.author.defaultAvatarURL, moneyOut: 0, moneyIn: 0, xp: 0, gems: 0, daily_countdown: 0, hourly_countdown: 0})
   
   if(timestamp < client.shareholders.getProp(key, "daily_countdown")) return message.channel.send("You have already claimed your daily reward, retry later !")
   
