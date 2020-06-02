@@ -6,8 +6,8 @@ const key = message.author.id
 
   client.shareholders.ensure(key, { name: message.author.username, tag: message.author.discriminator, id: key, moneyOut: 0, moneyIt: 0, xp: 0, gems: 0, daily_countdown: 0, hourly_countdown: 0})
   var data = client.shareholders
- // if(isNaN(args[0])) return message.channel.send("Your argument is not a number. \n\nHelp: `r!deposit 500`") 
-  //var amount = parseInt(args[0])
+  if(isNaN(args[0])) return message.channel.send("Your argument is not a number. \n\nHelp: `r!deposit 500`") 
+  var amount = parseInt(args[0])
   const money = client.shareholders.getProp(key, "moneyOut")
   if(!args[0]) return message.channel.send("```\nUsage: r!deposit <number>\nExample: r!deposit 500\n\nDeposit your hand money to bank.```")
   if(isNaN(args[0])) return message.channel.send("Your argument is not a number. \n\nHelp: `r!deposit <number>`")
