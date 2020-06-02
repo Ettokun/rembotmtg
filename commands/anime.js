@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const malScraper = require('mal-scraper');
-//const infos = require('../databases/infos.json')
+const infos = require('../databases/infos.json')
 const help = require('../databases/help.json') 
 
 exports.run = async (client, message, args) => {
