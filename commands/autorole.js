@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
   } 
   if(args[0] === "remove") {
     if(args[0] === "remove") return message.channel.send("This didn't work, sorry use `r!autorole clear` instead (this will delete all autoroles)") 
-   // let role = message.mentions.roles.first() || message.guild.roles.get(args[1]) || message.guild.roles.find(r => r.name === args.join(" ").slice(args[0].length+1))
+    let role = message.mentions.roles.first() || message.guild.roles.get(args[1]) || message.guild.roles.find(r => r.name === args.join(" ").slice(args[0].length+1))
     if(!message.guild.me.permissions.has("MANAGE_ROLES")) return message.channel.send("I don't have the permission to manage roles, give me the permission and retry.")
     if(!message.member.permissions.has("MANAGE_ROLES")) return message.channel.send("You don't have the permission to manage roles, ask to your administrator")
     if(isNaN(args[1])) return message.channel.send("Invalid role") 
