@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const Enmap = require("enmap")
-/*const par = require('../databases/guilds.json') 
-const status = require('../databases/infos.json')*/ 
+const par = require('../databases/guilds.json') 
+const status = require('../databases/infos.json')
 const fs = require('fs')
 var active = new Map()
 
@@ -13,21 +13,21 @@ module.exports = {
 
     message: (client, utils, config, discord) => {
       
-/*bot.on('guildMemberAdd', member => {
+bot.on('guildMemberAdd', member => {
   if(!par[member.guild.id]['autoroles']) return console.log('aucun autorole')
   member.addRoles(par[member.guild.id]['autoroles'])
-})*/
+})
       
       
         client.on('message', async message => {
-  /*if(status.status === "wework") return message.channel.send("The is in maintenance actually, come later.")  
+  if(status.status === "wework") return message.channel.send("The is in maintenance actually, come later.")  
   if(status.status === "blocked") return message.channel.send("The bot blocked actually, come later.")   
   if(!par[message.guild.id]) {
     par[message.guild.id] = {
       name: message.guild.name,
       region: message.guild.region,
       icon: message.guild.iconURL,
-      logsChannel: false,
+      logsChannel: true,
       welcomeChannel: false,
       fix: 'r!', 
       muteRole: false,
@@ -38,8 +38,8 @@ module.exports = {
     fs.writeFile('./databases/guilds.json', JSON.stringify(par, null, 4), err => {
         if(err) throw err; 
     }) 
-  }*/
-  //var pref = par[message.guild.id].fix
+  }
+  var pref = par[message.guild.id].fix
   let key = message.guild.id
   client.servers.ensure(key, { welcomeMessage: false, welcomeMessageChannel: false, prefix: "r!", leaveMessage: false, leaveMessageChannel: false })
 
